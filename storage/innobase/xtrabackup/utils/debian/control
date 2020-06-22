@@ -24,7 +24,7 @@ Homepage: http://www.percona.com/software/percona-xtrabackup
 
 Package: percona-xtrabackup-80
 Architecture: any
-Depends: libdbd-mysql-perl, libcurl4-openssl-dev, rsync, ${misc:Depends}, ${shlibs:Depends}
+Depends: libcurl4-openssl-dev, rsync, libdigest-perl-md5-perl, ${misc:Depends}, ${shlibs:Depends}
 Provides: xtrabackup
 Conflicts: percona-xtrabackup-21, percona-xtrabackup-22, percona-xtrabackup, percona-xtrabackup-24
 Breaks: xtrabackup (<< 2.0.0~)
@@ -46,7 +46,7 @@ Description: Debug symbols for Percona XtraBackup
 
 Package: percona-xtrabackup-test-80
 Architecture: any
-Depends: mysql-client, percona-xtrabackup-80, python, ${misc:Depends}
+Depends: mysql-client, percona-xtrabackup-80, python, libdbd-mysql-perl, ${misc:Depends}
 Description: Test suite for Percona XtraBackup
  Test suite for Percona XtraBackup. Install this package if you intend
  to run XtraBackup's test suite.

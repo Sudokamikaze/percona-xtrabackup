@@ -25,8 +25,8 @@ Source:         percona-xtrabackup-%{version}%{xb_version_extra}.tar.gz
 BuildRequires:  %{cmake_bin}, libaio-devel, libgcrypt-devel, ncurses-devel, readline-devel, zlib-devel, libev-devel openssl-devel
 BuildRequires:  libcurl-devel
 Conflicts:      percona-xtrabackup-21, percona-xtrabackup-22, percona-xtrabackup, percona-xtrabackup-24
-Requires:       perl(DBD::mysql), rsync
-Requires:	perl(Digest::MD5)
+Requires:       rsync
+Requires:       perl(Digest::MD5)
 BuildRoot:      %{_tmppath}/%{name}-%{version}%{xb_version_extra}-root
 
 
@@ -38,6 +38,7 @@ Summary:        Test suite for Percona XtraBackup
 Group:          Applications/Databases
 Requires:       percona-xtrabackup-%{xb_version_major}%{xb_version_minor} = %{version}-%{release}
 Requires:       /usr/bin/mysql
+Requires:       perl(DBD::mysql)
 AutoReqProv:    no
 
 %description -n percona-xtrabackup-test-%{xb_version_major}%{xb_version_minor}
