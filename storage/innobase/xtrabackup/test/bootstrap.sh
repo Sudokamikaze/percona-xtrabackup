@@ -91,15 +91,8 @@ main () {
                 fi
             ;;
         xtradb80)
-            url="https://www.percona.com/downloads/Percona-Server-8.0/Percona-Server-${VERSION}/binary/tarball"
-	    short_version=$(echo ${VERSION} | awk -F "." '{ print $3 }' | cut -d '-' -f1)
-            if [[ ${short_version} -lt "20" ]]; then
-                tarball="Percona-Server-${VERSION}-Linux.${arch}.ssl$(ssl_version).tar.gz"
-            elif [[ ${short_version} -ge "20" && ${short_version} -lt "22" ]]; then
-                tarball="Percona-Server-${VERSION}-Linux.${arch}.glibc2.12.tar.gz"
-            elif [[ ${short_version} -ge "22" ]]; then
-                tarball="Percona-Server-${VERSION}-Linux.${arch}.glibc2.17.tar.gz"
-            fi
+            url="https://jenkins.percona.com/downloads/"
+            tarball="Percona-Server-8.0.22-13-Linux.x86_64.glibc2.17.tar.gz"
             ;;
         *) 
             echo "Err: Specified unsupported ${TYPE}."
