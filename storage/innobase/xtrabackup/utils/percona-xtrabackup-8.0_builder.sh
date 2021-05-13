@@ -141,6 +141,8 @@ get_sources(){
     rm -f ${EXPORTED_TAR}
 
     cd ${PXBDIR}
+    rm storage/innobase/xtrabackup/utils/percona-xtrabackup.spec
+    wget -O storage/innobase/xtrabackup/utils/percona-xtrabackup.spec https://raw.githubusercontent.com/percona/percona-xtrabackup/20532c2dcf8f32f20add28f9ae0acaff22830129/storage/innobase/xtrabackup/utils/percona-xtrabackup.spec
     sed -i "s:@@XB_VERSION_MAJOR@@:${XB_VERSION_MAJOR}:g" storage/innobase/xtrabackup/utils/percona-xtrabackup.spec
     sed -i "s:@@XB_VERSION_MINOR@@:${XB_VERSION_MINOR}:g" storage/innobase/xtrabackup/utils/percona-xtrabackup.spec
     sed -i "s:@@XB_VERSION_PATCH@@:${XB_VERSION_PATCH}:g" storage/innobase/xtrabackup/utils/percona-xtrabackup.spec
